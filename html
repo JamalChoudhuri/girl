@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cute Girls - High-Resolution Free Stock Photos</title>
+    <meta name="description" content="Download high-quality, royalty-free stock photos of cute girls. 1000+ premium portraits for blogs, creative designs, and social media. Free high-res downloads.">
+    <meta name="keywords" content="cute girls, stock photos, free portraits, high resolution images, royalty free photos, aesthetic girls">
+    
+    <style>
+        :root { --primary: #111; --gray: #767676; --light: #f5f5f5; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; background-color: #fff; }
+        
+        /* Navigation */
+        nav { padding: 15px 30px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #ddd; position: sticky; top: 0; background: #fff; z-index: 1000; }
+        .logo { font-size: 24px; font-weight: 800; letter-spacing: -1px; text-decoration: none; color: var(--primary); }
+        .nav-links a { text-decoration: none; color: var(--gray); margin-left: 20px; font-size: 14px; font-weight: 500; }
+
+        /* Hero Section */
+        .hero { height: 60vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1500&q=80'); background-size: cover; background-position: center; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; text-align: center; padding: 20px; }
+        .hero h1 { font-size: clamp(32px, 5vw, 48px); margin-bottom: 10px; font-weight: 700; }
+        .hero p { font-size: 18px; margin-bottom: 30px; max-width: 600px; opacity: 0.9; }
+        .search-container { width: 100%; max-width: 600px; position: relative; }
+        .search-container input { width: 100%; padding: 15px 25px; border-radius: 50px; border: none; font-size: 16px; outline: none; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+        /* Gallery Structure */
+        .container { max-width: 1400px; margin: 40px auto; padding: 0 20px; }
+        .masonry { column-count: 3; column-gap: 20px; }
+        @media (max-width: 1000px) { .masonry { column-count: 2; } }
+        @media (max-width: 600px) { .masonry { column-count: 1; } }
+
+        .item { break-inside: avoid; margin-bottom: 20px; position: relative; border-radius: 10px; overflow: hidden; background: var(--light); transition: transform 0.3s ease; }
+        .item:hover { transform: translateY(-5px); }
+        .item img { width: 100%; height: auto; display: block; transition: 0.5s ease; cursor: pointer; }
+        .item:hover img { filter: brightness(70%); }
+
+        /* Overlay & Download */
+        .overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 15px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); display: flex; justify-content: space-between; align-items: center; opacity: 0; transition: 0.3s; }
+        .item:hover .overlay { opacity: 1; }
+        .download-btn { background: #fff; color: #111; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px; font-weight: 600; }
+        .author { color: #fff; font-size: 13px; font-weight: 400; }
+
+        footer { padding: 40px 20px; border-top: 1px solid #eee; text-align: center; color: var(--gray); font-size: 14px; background: #fafafa; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#" class="logo">Cute Girls</a>
+    <div class="nav-links">
+        <a href="#">Stock Photos</a>
+        <a href="#">License</a>
+        <a href="#" style="background: #111; color: #fff; padding: 8px 16px; border-radius: 4px;">Submit</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Cute Girls</h1>
+    <p>The internet’s highest quality source for free-to-use, aesthetic girl portraits.</p>
+    <div class="search-container">
+        <input type="text" placeholder="Search high-resolution photos...">
+    </div>
+</section>
+
+<div class="container">
+    <div class="masonry" id="gallery">
+        </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Cute Girls. All photos are Creative Commons Zero (CC0) Licensed.</p>
+</footer>
+
+<script>
+    // Configuration
+    const totalImages = 1000; // আপনি চাইলে এখানে সংখ্যা বাড়াতে বা কমাতে পারেন
+    const gallery = document.getElementById('gallery');
+
+    // Generate Slots
+    for (let i = 1; i <= totalImages; i++) {
+        const item = document.createElement('div');
+        item.className = 'item';
+        
+        // i.jpg মানে আপনার ছবির নাম হতে হবে 1.jpg, 2.jpg ইত্যাদি।
+        item.innerHTML = `
+            <img src="${i}.jpg" alt="Cute girl stock photo ${i} - High resolution portrait" loading="lazy">
+            <div class="overlay">
+                <span class="author">Premium HD</span>
+                <a href="${i}.jpg" download class="download-btn">Download</a>
+            </div>
+        `;
+        gallery.appendChild(item);
+    }
+</script>
+
+</body>
+</html>
