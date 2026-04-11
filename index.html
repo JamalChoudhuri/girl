@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PNG.PRO | Modern Stock Gallery</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>PNG.PRO | High Resolution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,31 +12,26 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">PNG<span>PRO</span></a>
-            
             <div class="nav-menu">
                 <button id="btn-girl" class="active" onclick="filterBy('girl')">Girls</button>
                 <button id="btn-sea" onclick="filterBy('sea')">Sea</button>
                 <button id="btn-couple" onclick="filterBy('couple')">Couple</button>
             </div>
-
-            <div class="status-badge" id="counter">Assets: 0</div>
+            <div class="status-badge" id="counter">Total: 0</div>
         </div>
     </nav>
 
     <header class="hero">
-        <h1 id="pageTitle">Premium Girl Portraits</h1>
-        <p>Explore thousands of high-quality transparent resources for your creative projects.</p>
+        <h1 id="pageTitle">High-Resolution Resources</h1>
+        <p>Premium visual assets for your creative projects.</p>
     </header>
 
-    <main class="container">
-        <div class="masonry-grid" id="gallery">
-            </div>
-
+    <div class="container">
+        <div class="masonry-grid" id="gallery"></div>
         <div id="loader" class="loader">
-            <div class="spinner"></div>
-            <p>Loading more amazing shots...</p>
+            <p>নতুন ছবি লোড হচ্ছে...</p>
         </div>
-    </main>
+    </div>
 
     <script src="script.js"></script>
 </body>
