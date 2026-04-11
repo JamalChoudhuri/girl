@@ -3,28 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium PNG Gallery | HD Resources</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> </head>
+    <title>PNG.PRO | Modern Stock Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-<nav>
-    <a href="#" class="logo">PNG.PRO</a>
-    <div class="status-badge" id="counter">Total: 0</div>
-</nav>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">PNG<span>PRO</span></a>
+            
+            <div class="nav-menu">
+                <button id="btn-girl" class="active" onclick="filterBy('girl')">Girls</button>
+                <button id="btn-sea" onclick="filterBy('sea')">Sea</button>
+                <button id="btn-couple" onclick="filterBy('couple')">Couple</button>
+            </div>
 
-<section class="hero">
-    <h1>High-Resolution PNGs</h1>
-    <p>Discover premium transparent resources for your next creative project. Free to use.</p>
-</section>
+            <div class="status-badge" id="counter">Assets: 0</div>
+        </div>
+    </nav>
 
-<div class="container">
-    <div class="masonry" id="gallery"></div>
-    <div class="footer-loader" id="loader">
-        <p>Scrolling for more...</p>
-    </div>
-</div>
+    <header class="hero">
+        <h1 id="pageTitle">Premium Girl Portraits</h1>
+        <p>Explore thousands of high-quality transparent resources for your creative projects.</p>
+    </header>
 
-<script src="script.js"></script> 
+    <main class="container">
+        <div class="masonry-grid" id="gallery">
+            </div>
+
+        <div id="loader" class="loader">
+            <div class="spinner"></div>
+            <p>Loading more amazing shots...</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
