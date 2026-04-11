@@ -242,6 +242,47 @@
     // Initial Load
     renderImages();
 </script>
+// ১. আপনার ১০,০০০ ছবির লিস্ট এখানে থাকবে (অথবা আলাদা JSON ফাইল থেকে আনতে পারেন)
+const allImages = [
+    "images/img1.png", "images/img2.png", "images/img3.png", 
+    // ... আপনার সব ছবির পাথ এখানে বসবে
+];
 
+const container = document.getElementById('image-container');
+const loading = document.getElementById('loading');
+let currentIndex = 0;
+const batchSize = 20; // প্রতিবার ২০টি করে ছবি লোড হবে
+
+// ২. ছবি রেন্ডার করার ফাংশন
+function loadImages() {
+    loading.style.display = 'block';
+    
+    const nextBatch = allImages.slice(currentIndex, currentIndex + batchSize);
+    
+    nextBatch.forEach(src => {
+        const imgCard = document.createElement('div');
+        imgCard.className = 'img-card';
+        imgCard.innerHTML = `
+            <img src="${src}" alt="Premium PNG" loading="lazy">
+        `;
+        container.appendChild(imgCard);
+    });
+
+    currentIndex += batchSize;
+    loading.style.display = 'none';
+}
+
+// ৩. Intersection Observer (স্ক্রল করলে অটো লোড হবে)
+const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && currentIndex < allImages.length) {
+        loadImages();
+    }
+}, { threshold: 1.0 });
+
+// লোডিং ডিভটিকে অবজার্ভ করা শুরু করো
+observer.observe(loading);
+
+// প্রথম ব্যাচ লোড করো
+loadImages();
 </body>
 </html>
